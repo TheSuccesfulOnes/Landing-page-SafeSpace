@@ -5,7 +5,7 @@
   "header": {
     "home": "Home",
     "about": "Product",
-    "employeesAndCompanies": "For employees and companies",
+    "employeesAndCompanies": "For employees and Human Resources",
     "plans": "Plans",
     "contact": "Contact",
     "aboutTeam": "Meet the Team",
@@ -36,23 +36,25 @@
   "sections": {
     "comingSoon": "More content for this section is coming soon.",
     "employeesAndCompanies": {
-      "eyebrow": "For employees and companies",
+      "eyebrow": "For employees and Human Resources",
       "title": "One platform, two ways to support people.",
-      "description": "SafeSpace connects everyday wellbeing with useful signals that help companies listen and take action.",
+      "description": "SafeSpace connects everyday wellbeing with useful signals that help Human Resources listen and take action.",
       "employees": {
         "label": "For employees",
         "title": "A space where you feel heard.",
         "description": "Simple tools to recognize how you feel, ask for support and participate with confidence.",
+        "imageAlt": "Illustration representing employees",
         "benefits": {
           "expression": "Share how you feel without judgment.",
           "guidance": "Find general guidance when you need it.",
           "privacy": "Share reports securely and anonymously when you choose."
         }
       },
-      "companies": {
-        "label": "For companies",
-        "title": "Signals to care for your team better.",
+      "humanResources": {
+        "label": "For Human Resources",
+        "title": "Signals to support your team better.",
         "description": "An organized view of wellbeing that helps you listen to people and turn their needs into action.",
+        "imageAlt": "Illustration representing Human Resources",
         "benefits": {
           "listen": "Understand team trends with greater clarity.",
           "signals": "Receive useful signals without exposing individual privacy.",

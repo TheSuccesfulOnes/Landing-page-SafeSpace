@@ -5,7 +5,7 @@
   "header": {
     "home": "Inicio",
     "about": "Producto",
-    "employeesAndCompanies": "Para empleados y empresas",
+    "employeesAndCompanies": "Para empleados y Recursos Humanos",
     "plans": "Planes",
     "contact": "Contacto",
     "aboutTeam": "Conócenos",
@@ -36,23 +36,25 @@
   "sections": {
     "comingSoon": "Contenido de esta sección próximamente.",
     "employeesAndCompanies": {
-      "eyebrow": "Para empleados y empresas",
+      "eyebrow": "Para empleados y Recursos Humanos",
       "title": "Una misma plataforma, dos formas de acompañar.",
-      "description": "SafeSpace conecta el bienestar cotidiano de las personas con señales útiles para que las empresas puedan escuchar y actuar.",
+      "description": "SafeSpace conecta el bienestar cotidiano de las personas con señales útiles para que Recursos Humanos pueda escuchar y actuar.",
       "employees": {
         "label": "Para empleados",
         "title": "Un espacio para sentirte escuchado.",
         "description": "Herramientas sencillas para reconocer cómo te sientes, pedir apoyo y participar con confianza.",
+        "imageAlt": "Ilustración de una persona representando a los empleados",
         "benefits": {
           "expression": "Expresa tu estado de ánimo sin juicios.",
           "guidance": "Encuentra orientación general cuando la necesites.",
           "privacy": "Comparte reportes de forma segura y, si quieres, anónima."
         }
       },
-      "companies": {
-        "label": "Para empresas",
-        "title": "Señales para cuidar mejor a tu equipo.",
+      "humanResources": {
+        "label": "Para Recursos Humanos",
+        "title": "Señales para acompañar mejor a tu equipo.",
         "description": "Una visión organizada del bienestar para escuchar a las personas y convertir sus necesidades en acciones.",
+        "imageAlt": "Ilustración de una persona representando a Recursos Humanos",
         "benefits": {
           "listen": "Escucha tendencias del equipo con mayor claridad.",
           "signals": "Recibe señales útiles sin exponer la privacidad individual.",

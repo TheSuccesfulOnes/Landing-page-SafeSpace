@@ -456,87 +456,148 @@ function App() {
               <p>{t("sections.employeesAndCompanies.description")}</p>
             </div>
 
-            <div className="audience-benefits">
-              <article className="audience-panel audience-panel--employees">
-                <div className="audience-panel-header">
-                  <p className="audience-panel-label">
-                    {t("sections.employeesAndCompanies.employees.label")}
-                  </p>
+            <div
+              onMouseLeave={() => setHoveredAudience(null)}
+              className={`audience-benefits ${
+                visibleAudience ? `has-${visibleAudience}` : "has-none"
+              }`}
+            >
+              <article
+                className={`audience-panel audience-panel--employees ${
+                  visibleAudience === "employees"
+                    ? "is-active"
+                    : visibleAudience
+                      ? "is-inactive"
+                      : "is-idle"
+                }`}
+                tabIndex={0}
+                role="button"
+                aria-pressed={selectedAudience === "employees"}
+                aria-expanded={visibleAudience === "employees"}
+                onPointerEnter={(event) => {
+                  if (event.pointerType === "mouse") setHoveredAudience("employees");
+                }}
+                onClick={() => handleAudienceSelection("employees")}
+                onKeyDown={(event) =>
+                  handleAudienceKeyDown(event, "employees")
+                }
+              >
+                <div className="audience-panel-content">
+                  <div className="audience-panel-header">
+                    <p className="audience-panel-label">
+                      {t("sections.employeesAndCompanies.employees.label")}
+                    </p>
+                  </div>
+                  <h3>{t("sections.employeesAndCompanies.employees.title")}</h3>
+                  <div className="audience-panel-details" aria-hidden={visibleAudience !== "employees"}>
+                    <div className="audience-panel-details-inner">
+                    <p className="audience-panel-description">
+                      {t("sections.employeesAndCompanies.employees.description")}
+                    </p>
+                    <ul className="audience-panel-benefits">
+                      <li>
+                        <span
+                          className="audience-benefit-mark"
+                          aria-hidden="true"
+                        />
+                        {t(
+                          "sections.employeesAndCompanies.employees.benefits.expression",
+                        )}
+                      </li>
+                      <li>
+                        <span
+                          className="audience-benefit-mark"
+                          aria-hidden="true"
+                        />
+                        {t(
+                          "sections.employeesAndCompanies.employees.benefits.guidance",
+                        )}
+                      </li>
+                      <li>
+                        <span
+                          className="audience-benefit-mark"
+                          aria-hidden="true"
+                        />
+                        {t(
+                          "sections.employeesAndCompanies.employees.benefits.privacy",
+                        )}
+                      </li>
+                    </ul>
+                  </div>
+                  </div>
                 </div>
-                <h3>{t("sections.employeesAndCompanies.employees.title")}</h3>
-                <p className="audience-panel-description">
-                  {t("sections.employeesAndCompanies.employees.description")}
-                </p>
-                <ul className="audience-panel-benefits">
-                  <li>
-                    <span
-                      className="audience-benefit-mark"
-                      aria-hidden="true"
-                    />
-                    {t(
-                      "sections.employeesAndCompanies.employees.benefits.expression",
-                    )}
-                  </li>
-                  <li>
-                    <span
-                      className="audience-benefit-mark"
-                      aria-hidden="true"
-                    />
-                    {t(
-                      "sections.employeesAndCompanies.employees.benefits.guidance",
-                    )}
-                  </li>
-                  <li>
-                    <span
-                      className="audience-benefit-mark"
-                      aria-hidden="true"
-                    />
-                    {t(
-                      "sections.employeesAndCompanies.employees.benefits.privacy",
-                    )}
-                  </li>
-                </ul>
               </article>
 
-              <article className="audience-panel audience-panel--companies">
-                <div className="audience-panel-header">
-                  <p className="audience-panel-label">
-                    {t("sections.employeesAndCompanies.companies.label")}
-                  </p>
+              <article
+                className={`audience-panel audience-panel--human-resources ${
+                  visibleAudience === "humanResources"
+                    ? "is-active"
+                    : visibleAudience
+                      ? "is-inactive"
+                      : "is-idle"
+                }`}
+                tabIndex={0}
+                role="button"
+                aria-pressed={selectedAudience === "humanResources"}
+                aria-expanded={visibleAudience === "humanResources"}
+                onPointerEnter={(event) => {
+                  if (event.pointerType === "mouse") setHoveredAudience("humanResources");
+                }}
+                onClick={() => handleAudienceSelection("humanResources")}
+                onKeyDown={(event) =>
+                  handleAudienceKeyDown(event, "humanResources")
+                }
+              >
+                <div className="audience-panel-content">
+                  <div className="audience-panel-header">
+                    <p className="audience-panel-label">
+                      {t(
+                        "sections.employeesAndCompanies.humanResources.label",
+                      )}
+                    </p>
+                  </div>
+                  <h3>
+                    {t("sections.employeesAndCompanies.humanResources.title")}
+                  </h3>
+                  <div className="audience-panel-details" aria-hidden={visibleAudience !== "humanResources"}>
+                    <div className="audience-panel-details-inner">
+                    <p className="audience-panel-description">
+                      {t(
+                        "sections.employeesAndCompanies.humanResources.description",
+                      )}
+                    </p>
+                    <ul className="audience-panel-benefits">
+                      <li>
+                        <span
+                          className="audience-benefit-mark"
+                          aria-hidden="true"
+                        />
+                        {t(
+                          "sections.employeesAndCompanies.humanResources.benefits.listen",
+                        )}
+                      </li>
+                      <li>
+                        <span
+                          className="audience-benefit-mark"
+                          aria-hidden="true"
+                        />
+                        {t(
+                          "sections.employeesAndCompanies.humanResources.benefits.signals",
+                        )}
+                      </li>
+                      <li>
+                        <span
+                          className="audience-benefit-mark"
+                          aria-hidden="true"
+                        />
+                        {t(
+                          "sections.employeesAndCompanies.humanResources.benefits.action",
+                        )}
+                      </li>
+                    </ul>
+                  </div>
+                  </div>
                 </div>
-                <h3>{t("sections.employeesAndCompanies.companies.title")}</h3>
-                <p className="audience-panel-description">
-                  {t("sections.employeesAndCompanies.companies.description")}
-                </p>
-                <ul className="audience-panel-benefits">
-                  <li>
-                    <span
-                      className="audience-benefit-mark"
-                      aria-hidden="true"
-                    />
-                    {t(
-                      "sections.employeesAndCompanies.companies.benefits.listen",
-                    )}
-                  </li>
-                  <li>
-                    <span
-                      className="audience-benefit-mark"
-                      aria-hidden="true"
-                    />
-                    {t(
-                      "sections.employeesAndCompanies.companies.benefits.signals",
-                    )}
-                  </li>
-                  <li>
-                    <span
-                      className="audience-benefit-mark"
-                      aria-hidden="true"
-                    />
-                    {t(
-                      "sections.employeesAndCompanies.companies.benefits.action",
-                    )}
-                  </li>
-                </ul>
               </article>
             </div>
           </div>
