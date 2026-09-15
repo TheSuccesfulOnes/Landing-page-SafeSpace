@@ -1,16 +1,79 @@
-import { type MouseEvent, useEffect, useState } from "react";
+import {
+  type FocusEvent,
+  type FormEvent,
+  type KeyboardEvent,
+  type MouseEvent,
+  useEffect,
+  useState,
+} from "react";
 import { useTranslation } from "react-i18next";
 import "./App.css";
+
+type Audience = "employees" | "humanResources";
+type Currency = "PEN" | "USD";
+
+const teamMembers = [
+  { key: "member01", image: "/media/team/member-01.png" },
+  { key: "member02", image: "/media/team/member-02.png" },
+  { key: "member03", image: "/media/team/member-03.png" },
+  { key: "member04", image: "/media/team/member-04.png" },
+  { key: "member05", image: "/media/team/member-05.png" },
+] as const;
 
 function App() {
   const { t, i18n } = useTranslation();
   const [activeSection, setActiveSection] = useState("home");
   const [reduceMotion, setReduceMotion] = useState(false);
+  const [selectedAudience, setSelectedAudience] = useState<Audience | null>(
+    null,
+  );
+  const [hoveredAudience, setHoveredAudience] = useState<Audience | null>(
+    null,
+  );
+  const [activeTeamMember, setActiveTeamMember] = useState(0);
+  const [isTeamPaused, setIsTeamPaused] = useState(false);
+  const [contactSubmitted, setContactSubmitted] = useState(false);
   const currentLanguage = i18n.resolvedLanguage?.startsWith("en") ? "en" : "es";
   const isEnglish = currentLanguage === "en";
+  const [currency, setCurrency] = useState<Currency>("PEN");
   const brandKicker = t("brand.kicker", {
     defaultValue: isEnglish ? "Employee wellbeing" : "Bienestar laboral",
   });
+
+  const planPriceFormatter = new Intl.NumberFormat(
+    isEnglish ? "en-US" : "es-PE",
+    {
+      minimumFractionDigits: currency === "USD" ? 2 : 0,
+      maximumFractionDigits: currency === "USD" ? 2 : 0,
+    },
+  );
+
+  const plans = [
+    {
+      key: "monthly",
+      price: currency === "PEN" ? 20 : 5.33,
+      featured: false,
+    },
+    {
+      key: "annual",
+      price: currency === "PEN" ? 150 : 40,
+      featured: true,
+    },
+  ] as const;
+
+  useEffect(() => {
+    if (reduceMotion || isTeamPaused) {
+      return undefined;
+    }
+
+    const teamRotation = window.setInterval(() => {
+      setActiveTeamMember((currentMember) =>
+        (currentMember + 1) % teamMembers.length,
+      );
+    }, 20000);
+
+    return () => window.clearInterval(teamRotation);
+  }, [isTeamPaused, reduceMotion]);
 
   useEffect(() => {
     document.documentElement.lang = currentLanguage;
@@ -82,6 +145,54 @@ function App() {
       behavior: reduceMotion ? "auto" : "smooth",
     });
   };
+
+  const visibleAudience = hoveredAudience ?? selectedAudience;
+
+  const handleAudienceSelection = (audience: Audience) => {
+    setHoveredAudience(null);
+    setSelectedAudience((currentAudience) =>
+      currentAudience === audience ? null : audience,
+    );
+  };
+
+  const handleAudienceKeyDown = (
+    event: KeyboardEvent<HTMLElement>,
+    audience: Audience,
+  ) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      handleAudienceSelection(audience);
+    }
+  };
+
+  const moveTeamMember = (direction: 1 | -1) => {
+    setActiveTeamMember((currentMember) => {
+      const nextMember = currentMember + direction;
+
+      return (nextMember + teamMembers.length) % teamMembers.length;
+    });
+  };
+
+  const handleContactSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setContactSubmitted(true);
+    event.currentTarget.reset();
+  };
+
+  const handleTeamBlur = (event: FocusEvent<HTMLDivElement>) => {
+    const nextFocusedElement = event.relatedTarget;
+
+    if (
+      nextFocusedElement instanceof Node &&
+      event.currentTarget.contains(nextFocusedElement)
+    ) {
+      return;
+    }
+
+    setIsTeamPaused(false);
+  };
+
+  const currentTeamMember = teamMembers[activeTeamMember];
 
   return (
     <div className="app-container">
@@ -273,33 +384,55 @@ function App() {
                 aria-label={t("about.visualLabel")}
               >
                 <figure className="product-preview product-preview--desktop product-preview--back">
-                  <img
-                    src="/media/how-it-works/web-hr-summary.svg"
-                    alt={t("about.visualAlt.webHr")}
-                    loading="lazy"
-                  />
+                  <div className="device-laptop">
+                    <div className="device-laptop-camera" aria-hidden="true" />
+                    <div className="device-laptop-screen">
+                      <img
+                        src="/media/how-it-works/web-hr-summary.svg"
+                        alt={t("about.visualAlt.webHr")}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="device-laptop-base" />
+                  </div>
                 </figure>
                 <figure className="product-preview product-preview--desktop product-preview--front">
-                  <img
-                    src="/media/how-it-works/web-employee-home.svg"
-                    alt={t("about.visualAlt.webEmployee")}
-                    loading="lazy"
-                  />
+                  <div className="device-laptop">
+                    <div className="device-laptop-camera" aria-hidden="true" />
+                    <div className="device-laptop-screen">
+                      <img
+                        src="/media/how-it-works/web-employee-home.svg"
+                        alt={t("about.visualAlt.webEmployee")}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="device-laptop-base" />
+                  </div>
                 </figure>
                 <div className="product-preview-mobile-group">
                   <figure className="product-preview product-preview--mobile product-preview--mobile-back">
-                    <img
-                      src="/media/how-it-works/mobile-hr-summary.svg"
-                      alt={t("about.visualAlt.mobileHr")}
-                      loading="lazy"
-                    />
+                    <div className="device-phone">
+                      <div className="device-phone-speaker" aria-hidden="true" />
+                      <div className="device-phone-screen">
+                        <img
+                          src="/media/how-it-works/mobile-hr-summary.svg"
+                          alt={t("about.visualAlt.mobileHr")}
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
                   </figure>
                   <figure className="product-preview product-preview--mobile product-preview--mobile-front">
-                    <img
-                      src="/media/how-it-works/mobile-employee-home.svg"
-                      alt={t("about.visualAlt.mobileEmployee")}
-                      loading="lazy"
-                    />
+                    <div className="device-phone">
+                      <div className="device-phone-speaker" aria-hidden="true" />
+                      <div className="device-phone-screen">
+                        <img
+                          src="/media/how-it-works/mobile-employee-home.svg"
+                          alt={t("about.visualAlt.mobileEmployee")}
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
                   </figure>
                 </div>
               </div>
