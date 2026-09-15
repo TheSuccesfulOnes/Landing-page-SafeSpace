@@ -609,13 +609,104 @@ function App() {
           aria-labelledby="plans-title"
         >
           <div className="landing-section-inner">
-            <div className="landing-section-content landing-section-content--compact">
-              <p className="section-eyebrow">{t("sections.plans.eyebrow")}</p>
-              <h2 id="plans-title">{t("sections.plans.title")}</h2>
-              <p>{t("sections.plans.description")}</p>
-              <div className="landing-section-note">
-                {t("sections.comingSoon")}
+            <div className="plans-section-heading">
+              <div className="landing-section-content landing-section-content--compact">
+                <p className="section-eyebrow">
+                  {t("sections.plans.eyebrow")}
+                </p>
+                <h2 id="plans-title">{t("sections.plans.title")}</h2>
+                <p>{t("sections.plans.description")}</p>
               </div>
+
+              <div className="plans-currency-control">
+                <span className="plans-currency-label">
+                  {t("sections.plans.currencyLabel")}
+                </span>
+                <div
+                  className="currency-switcher"
+                  role="group"
+                  aria-label={t("sections.plans.currencyLabel")}
+                >
+                  <button
+                    type="button"
+                    className={currency === "PEN" ? "is-selected" : ""}
+                    aria-pressed={currency === "PEN"}
+                    onClick={() => setCurrency("PEN")}
+                  >
+                    S/ <span>{t("sections.plans.soles")}</span>
+                  </button>
+                  <button
+                    type="button"
+                    className={currency === "USD" ? "is-selected" : ""}
+                    aria-pressed={currency === "USD"}
+                    onClick={() => setCurrency("USD")}
+                  >
+                    US$ <span>{t("sections.plans.dollars")}</span>
+                  </button>
+                </div>
+                <p className="plans-rate-note">
+                  {t("sections.plans.exchangeRate")}
+                </p>
+              </div>
+            </div>
+
+            <div className="plans-grid">
+              {plans.map((plan) => (
+                <article
+                  className={
+                    plan.featured ? "plan-card plan-card--featured" : "plan-card"
+                  }
+                  key={plan.key}
+                >
+                  <div className="plan-card-topline">
+                    <p className="plan-card-label">
+                      {t(`sections.plans.${plan.key}.label`)}
+                    </p>
+                    {plan.featured ? (
+                      <span className="plan-card-badge">
+                        {t("sections.plans.recommended")}
+                      </span>
+                    ) : null}
+                  </div>
+                  <h3>{t(`sections.plans.${plan.key}.title`)}</h3>
+                  <p className="plan-card-description">
+                    {t(`sections.plans.${plan.key}.description`)}
+                  </p>
+                  <div className="plan-price" aria-live="polite">
+                    <span className="plan-price-currency">
+                      {currency === "PEN" ? "S/" : "US$"}
+                    </span>
+                    <strong>{planPriceFormatter.format(plan.price)}</strong>
+                    <span className="plan-price-period">
+                      / {t(`sections.plans.${plan.key}.period`)}
+                    </span>
+                  </div>
+                  <ul className="plan-card-features">
+                    {[
+                      "wellbeing",
+                      "tracking",
+                      "guidance",
+                      ...(plan.key === "annual" ? ["saving"] : []),
+                    ].map((feature) => (
+                      <li key={feature}>
+                        <span aria-hidden="true">✓</span>
+                        {t(`sections.plans.${plan.key}.features.${feature}`)}
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    className={
+                      plan.featured
+                        ? "plan-card-action plan-card-action--featured"
+                        : "plan-card-action"
+                    }
+                    href="#register"
+                  >
+                    {t("sections.plans.choosePlan")}
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </article>
+              ))}
             </div>
           </div>
         </section>
