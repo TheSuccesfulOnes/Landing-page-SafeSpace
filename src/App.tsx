@@ -955,6 +955,30 @@ function App() {
             </div>
           </div>
         </section>
+
+        <section
+          id="join"
+          className="cta-section"
+          aria-labelledby="cta-title"
+        >
+          <div className="cta-inner">
+            <p className="section-eyebrow">
+              {t("sections.callToAction.eyebrow")}
+            </p>
+            <h2 id="cta-title">{t("sections.callToAction.title")}</h2>
+            <p>{t("sections.callToAction.description")}</p>
+            <a
+              className="cta-action"
+              href="#plans"
+              onClick={() => setActiveSection("plans")}
+            >
+              {t("sections.callToAction.button")}
+              <span className="material-symbols-outlined" aria-hidden="true">
+                arrow_forward
+              </span>
+            </a>
+          </div>
+        </section>
       </main>
 
       <footer className="footer-app">
