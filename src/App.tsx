@@ -828,15 +828,130 @@ function App() {
           aria-labelledby="about-team-title"
         >
           <div className="landing-section-inner">
-            <div className="landing-section-content landing-section-content--compact">
+            <div className="landing-section-content landing-section-content--compact team-section-heading">
               <p className="section-eyebrow">
                 {t("sections.aboutTeam.eyebrow")}
               </p>
               <h2 id="about-team-title">{t("sections.aboutTeam.title")}</h2>
               <p>{t("sections.aboutTeam.description")}</p>
-              <div className="landing-section-note">
-                {t("sections.comingSoon")}
+
+              <div className="team-values">
+                <article className="team-value">
+                  <p className="team-value-label">
+                    {t("sections.aboutTeam.vision.label")}
+                  </p>
+                  <p className="team-value-copy">
+                    {t("sections.aboutTeam.vision.text")}
+                  </p>
+                </article>
+                <article className="team-value">
+                  <p className="team-value-label">
+                    {t("sections.aboutTeam.mission.label")}
+                  </p>
+                  <p className="team-value-copy">
+                    {t("sections.aboutTeam.mission.text")}
+                  </p>
+                </article>
               </div>
+            </div>
+
+            <div
+              className={`team-carousel ${isTeamPaused ? "is-paused" : ""}`}
+              role="region"
+              aria-roledescription="carousel"
+              aria-label={t("sections.aboutTeam.carouselLabel")}
+              onMouseEnter={() => setIsTeamPaused(true)}
+              onMouseLeave={() => setIsTeamPaused(false)}
+              onFocus={() => setIsTeamPaused(true)}
+              onBlur={handleTeamBlur}
+            >
+              <div className="team-carousel-status">
+                <span>
+                  {t("sections.aboutTeam.profileCounter", {
+                    current: String(activeTeamMember + 1).padStart(2, "0"),
+                    total: String(teamMembers.length).padStart(2, "0"),
+                  })}
+                </span>
+                <span>
+                  {isTeamPaused
+                    ? t("sections.aboutTeam.paused")
+                    : t("sections.aboutTeam.autoRotate")}
+                </span>
+              </div>
+
+              <figure className="team-portrait" key={currentTeamMember.key}>
+                <img
+                  src={currentTeamMember.image}
+                  alt={t(
+                    `sections.aboutTeam.members.${currentTeamMember.key}.alt`,
+                  )}
+                />
+              </figure>
+
+              <div
+                className="team-profile"
+                key={`${currentTeamMember.key}-profile`}
+                aria-live="polite"
+              >
+                <p className="team-member-role">
+                  {t(
+                    `sections.aboutTeam.members.${currentTeamMember.key}.role`,
+                  )}
+                </p>
+                <h3>
+                  {t(
+                    `sections.aboutTeam.members.${currentTeamMember.key}.name`,
+                  )}
+                </h3>
+                <p className="team-member-description">
+                  {t(
+                    `sections.aboutTeam.members.${currentTeamMember.key}.description`,
+                  )}
+                </p>
+
+                <nav
+                  className="team-dots"
+                  aria-label={t("sections.aboutTeam.profileNavigation")}
+                >
+                  {teamMembers.map((member, memberIndex) => (
+                    <button
+                      type="button"
+                      className={
+                        memberIndex === activeTeamMember ? "is-active" : ""
+                      }
+                      aria-label={t("sections.aboutTeam.goToProfile", {
+                        number: memberIndex + 1,
+                      })}
+                      aria-current={
+                        memberIndex === activeTeamMember ? "true" : undefined
+                      }
+                      onClick={() => setActiveTeamMember(memberIndex)}
+                      key={member.key}
+                    />
+                  ))}
+                </nav>
+              </div>
+
+              <button
+                type="button"
+                className="team-arrow team-arrow--previous"
+                aria-label={t("sections.aboutTeam.previous")}
+                onClick={() => moveTeamMember(-1)}
+              >
+                <span className="material-symbols-outlined" aria-hidden="true">
+                  arrow_back
+                </span>
+              </button>
+              <button
+                type="button"
+                className="team-arrow team-arrow--next"
+                aria-label={t("sections.aboutTeam.next")}
+                onClick={() => moveTeamMember(1)}
+              >
+                <span className="material-symbols-outlined" aria-hidden="true">
+                  arrow_forward
+                </span>
+              </button>
             </div>
           </div>
         </section>
