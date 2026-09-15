@@ -65,17 +65,115 @@
     "plans": {
       "eyebrow": "Planes",
       "title": "Elige el ritmo que mejor encaje con tu organización.",
-      "description": "Más adelante podrás comparar nuestras modalidades mensual y anual, pensadas para acompañar el crecimiento de cada equipo."
+      "description": "Elige una modalidad flexible para acompañar el bienestar de tu equipo durante todo el año.",
+      "currencyLabel": "Mostrar precios en",
+      "soles": "Soles",
+      "dollars": "Dólares",
+      "exchangeRate": "Conversión referencial: 1 US$ = S/3.75",
+      "recommended": "Mejor valor",
+      "choosePlan": "Elegir este plan",
+      "monthly": {
+        "label": "Modalidad mensual",
+        "title": "Mensual",
+        "description": "Flexibilidad para comenzar a cuidar el bienestar de tu equipo mes a mes.",
+        "period": "mes",
+        "features": {
+          "wellbeing": "Acceso a las herramientas de bienestar",
+          "tracking": "Seguimiento del estado de ánimo",
+          "guidance": "Orientación general cuando la necesites"
+        }
+      },
+      "annual": {
+        "label": "Modalidad anual",
+        "title": "Anual",
+        "description": "Acompañamiento continuo para construir una cultura de bienestar sostenible.",
+        "period": "año",
+        "features": {
+          "wellbeing": "Acceso a las herramientas de bienestar",
+          "tracking": "Seguimiento del estado de ánimo",
+          "guidance": "Orientación general cuando la necesites",
+          "saving": "Ahorra frente a 12 pagos mensuales"
+        }
+      }
     },
     "contact": {
       "eyebrow": "Contacto",
       "title": "Hablemos sobre el bienestar de tu equipo.",
-      "description": "Estamos preparando un canal sencillo para resolver tus preguntas y conocer mejor las necesidades de tu organización."
+      "description": "Cuéntanos qué necesitas y descubre cómo SafeSpace puede acompañar mejor a las personas y sus equipos.",
+      "responseNote": "Un espacio para empezar la conversación",
+      "form": {
+        "label": "Escríbenos",
+        "nameLabel": "Nombre completo",
+        "namePlaceholder": "¿Cómo te llamas?",
+        "emailLabel": "Correo electrónico",
+        "emailPlaceholder": "nombre@organizacion.com",
+        "organizationLabel": "Organización",
+        "organizationPlaceholder": "Nombre de tu organización",
+        "messageLabel": "¿Cómo podemos ayudarte?",
+        "messagePlaceholder": "Cuéntanos brevemente qué estás buscando...",
+        "privacyNote": "La información se utilizará únicamente para atender tu consulta.",
+        "submit": "Enviar consulta",
+        "success": "¡Gracias! Hemos recibido tu consulta."
+      }
     },
     "aboutTeam": {
       "eyebrow": "Conócenos",
       "title": "Detrás de SafeSpace hay personas que también escuchan.",
-      "description": "Conoce al equipo que está construyendo un espacio más humano para el bienestar laboral."
+      "description": "Conoce al equipo que está construyendo un espacio más humano para el bienestar laboral.",
+      "vision": {
+        "label": "Nuestra visión",
+        "text": "Construir espacios de trabajo donde hablar del bienestar sea natural, seguro y accionable."
+      },
+      "mission": {
+        "label": "Nuestra misión",
+        "text": "Acompañar a personas y equipos con herramientas claras para escuchar, orientar y actuar a tiempo."
+      },
+      "carouselLabel": "Equipo de SafeSpace",
+      "profileCounter": "Perfil {{current}} de {{total}}",
+      "profileNavigation": "Seleccionar perfil del equipo",
+      "goToProfile": "Ir al perfil {{number}}",
+      "previous": "Ver integrante anterior",
+      "next": "Ver integrante siguiente",
+      "autoRotate": "Cambio automático cada 20 segundos",
+      "paused": "Pausa activa",
+      "members": {
+        "member01": {
+          "name": "Milenko Rubén Cayanchi Ávila",
+          "role": "Ingeniería de Software y producto",
+          "description": "Estudiante de Ingeniería de Software, proactivo y comprometido con la creación de soluciones tecnológicas que aporten valor. Su interés por el desarrollo de software y la innovación lo impulsa a seguir aprendiendo y a contribuir al futuro de la tecnología aplicada al bienestar.",
+          "alt": "Retrato profesional de Milenko Rubén Cayanchi Ávila"
+        },
+        "member02": {
+          "name": "Alexther Kamil Díaz Martínez",
+          "role": "Desarrollo Full Stack e inteligencia artificial",
+          "description": "Estudiante de sexto ciclo de Ingeniería de Software y desarrollador Full Stack. Se caracteriza por su capacidad de adaptación, actitud colaborativa y resiliencia, con experiencia en frontend, backend, bases de datos y un interés especial en aplicar inteligencia artificial para optimizar procesos.",
+          "alt": "Retrato profesional de Alexther Kamil Díaz Martínez"
+        },
+        "member03": {
+          "name": "Mauricio Luis Pajés León",
+          "role": "Backend y arquitectura cloud",
+          "description": "Estudiante de Ingeniería de Software enfocado en el desarrollo Backend, la integración de APIs y el diseño de soluciones confiables. Trabaja con TypeScript, Node.js, bases de datos y procesamiento de eventos en AWS, y mantiene una formación constante en arquitecturas SQL y NoSQL.",
+          "alt": "Retrato profesional de Mauricio Luis Pajés León"
+        },
+        "member04": {
+          "name": "Diego Andrés Ávalos Córdova",
+          "role": "Desarrollo Full Stack y ciberseguridad",
+          "description": "Estudiante de Ingeniería de Software con experiencia como desarrollador junior en ISP Lima. Cuenta con conocimientos en desarrollo web, sistemas GNU/Linux, Full Stack, ciberseguridad y hacking ético, áreas que combina con su interés por la inteligencia artificial y la investigación tecnológica.",
+          "alt": "Retrato profesional de Diego Andrés Ávalos Córdova"
+        },
+        "member05": {
+          "name": "José Gustavo Asto Jácome",
+          "role": "Backend, Full Stack e inteligencia artificial",
+          "description": "Estudiante de Ingeniería de Software en la UPC, orientado al desarrollo Backend, Full Stack y la inteligencia artificial aplicada. Tiene experiencia con Angular, Vue, Spring Boot, .NET, MySQL y Git, además de conocimientos en arquitectura de software y desarrollo de aplicaciones web.",
+          "alt": "Retrato profesional de José Gustavo Asto Jácome"
+        }
+      }
+    },
+    "callToAction": {
+      "eyebrow": "Empieza con SafeSpace",
+      "title": "Haz del bienestar una parte de tu día.",
+      "description": "Únete a una forma más humana de escuchar, acompañar y cuidar a las personas y sus equipos.",
+      "button": "Ver los planes"
     }
   },
   "footer": {

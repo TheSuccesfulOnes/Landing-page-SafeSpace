@@ -65,17 +65,115 @@
     "plans": {
       "eyebrow": "Plans",
       "title": "Choose the pace that fits your organization.",
-      "description": "You will soon be able to compare our monthly and annual options, designed to support every team as it grows."
+      "description": "Choose a flexible option to support your team’s wellbeing throughout the year.",
+      "currencyLabel": "Show prices in",
+      "soles": "Soles",
+      "dollars": "Dollars",
+      "exchangeRate": "Reference conversion: US$1 = S/3.75",
+      "recommended": "Best value",
+      "choosePlan": "Choose this plan",
+      "monthly": {
+        "label": "Monthly option",
+        "title": "Monthly",
+        "description": "The flexibility to start caring for your team’s wellbeing month by month.",
+        "period": "month",
+        "features": {
+          "wellbeing": "Access to wellbeing tools",
+          "tracking": "Mood tracking",
+          "guidance": "General guidance when you need it"
+        }
+      },
+      "annual": {
+        "label": "Annual option",
+        "title": "Annual",
+        "description": "Continuous support to build a sustainable culture of wellbeing.",
+        "period": "year",
+        "features": {
+          "wellbeing": "Access to wellbeing tools",
+          "tracking": "Mood tracking",
+          "guidance": "General guidance when you need it",
+          "saving": "Save compared with 12 monthly payments"
+        }
+      }
     },
     "contact": {
       "eyebrow": "Contact",
       "title": "Let’s talk about your team’s wellbeing.",
-      "description": "We are preparing a simple channel for your questions and to better understand your organization’s needs."
+      "description": "Tell us what you need and discover how SafeSpace can better support people and their teams.",
+      "responseNote": "A space to start the conversation",
+      "form": {
+        "label": "Write to us",
+        "nameLabel": "Full name",
+        "namePlaceholder": "What is your name?",
+        "emailLabel": "Email address",
+        "emailPlaceholder": "name@organization.com",
+        "organizationLabel": "Organization",
+        "organizationPlaceholder": "Your organization’s name",
+        "messageLabel": "How can we help?",
+        "messagePlaceholder": "Briefly tell us what you are looking for...",
+        "privacyNote": "Your information will only be used to respond to your inquiry.",
+        "submit": "Send inquiry",
+        "success": "Thank you! We have received your inquiry."
+      }
     },
     "aboutTeam": {
       "eyebrow": "Meet the team",
       "title": "SafeSpace is built by people who listen too.",
-      "description": "Meet the team building a more human space for workplace wellbeing."
+      "description": "Meet the team building a more human space for workplace wellbeing.",
+      "vision": {
+        "label": "Our vision",
+        "text": "Build workplaces where talking about wellbeing feels natural, safe and actionable."
+      },
+      "mission": {
+        "label": "Our mission",
+        "text": "Support people and teams with clear tools to listen, guide and act at the right time."
+      },
+      "carouselLabel": "SafeSpace team",
+      "profileCounter": "Profile {{current}} of {{total}}",
+      "profileNavigation": "Select a team profile",
+      "goToProfile": "Go to profile {{number}}",
+      "previous": "View previous team member",
+      "next": "View next team member",
+      "autoRotate": "Automatically changes every 20 seconds",
+      "paused": "Paused",
+      "members": {
+        "member01": {
+          "name": "Milenko Rubén Cayanchi Ávila",
+          "role": "Software engineering and product",
+          "description": "A proactive Software Engineering student committed to creating technology solutions that deliver value. His interest in software development and innovation drives him to keep learning and contribute to the future of technology applied to wellbeing.",
+          "alt": "Professional portrait of Milenko Rubén Cayanchi Ávila"
+        },
+        "member02": {
+          "name": "Alexther Kamil Díaz Martínez",
+          "role": "Full Stack development and AI",
+          "description": "A sixth-semester Software Engineering student and Full Stack developer. He stands out for adaptability, collaboration and resilience, with experience across frontend, backend and databases, plus a strong interest in applying artificial intelligence to optimize processes.",
+          "alt": "Professional portrait of Alexther Kamil Díaz Martínez"
+        },
+        "member03": {
+          "name": "Mauricio Luis Pajés León",
+          "role": "Backend and cloud architecture",
+          "description": "A Software Engineering student focused on Backend development, API integration and reliable solutions. He works with TypeScript, Node.js, databases and event processing in AWS, while continuing to grow his knowledge of SQL and NoSQL architectures.",
+          "alt": "Professional portrait of Mauricio Luis Pajés León"
+        },
+        "member04": {
+          "name": "Diego Andrés Ávalos Córdova",
+          "role": "Full Stack development and cybersecurity",
+          "description": "A Software Engineering student with experience as a junior developer at ISP Lima. He has knowledge of web development, GNU/Linux systems, Full Stack development, cybersecurity and ethical hacking, combined with a strong interest in artificial intelligence and technology research.",
+          "alt": "Professional portrait of Diego Andrés Ávalos Córdova"
+        },
+        "member05": {
+          "name": "José Gustavo Asto Jácome",
+          "role": "Backend, Full Stack and AI",
+          "description": "A Software Engineering student at UPC focused on Backend, Full Stack development and applied artificial intelligence. He has experience with Angular, Vue, Spring Boot, .NET, MySQL and Git, along with knowledge of software architecture and web application development.",
+          "alt": "Professional portrait of José Gustavo Asto Jácome"
+        }
+      }
+    },
+    "callToAction": {
+      "eyebrow": "Start with SafeSpace",
+      "title": "Make wellbeing part of every day.",
+      "description": "Join a more human way to listen, support and care for people and their teams.",
+      "button": "View the plans"
     }
   },
   "footer": {
