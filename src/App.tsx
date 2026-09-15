@@ -717,13 +717,107 @@ function App() {
           aria-labelledby="contact-title"
         >
           <div className="landing-section-inner">
-            <div className="landing-section-content landing-section-content--compact">
-              <p className="section-eyebrow">{t("sections.contact.eyebrow")}</p>
-              <h2 id="contact-title">{t("sections.contact.title")}</h2>
-              <p>{t("sections.contact.description")}</p>
-              <div className="landing-section-note">
-                {t("sections.comingSoon")}
+            <div className="contact-layout">
+              <div className="landing-section-content contact-copy">
+                <p className="section-eyebrow">
+                  {t("sections.contact.eyebrow")}
+                </p>
+                <h2 id="contact-title">{t("sections.contact.title")}</h2>
+                <p>{t("sections.contact.description")}</p>
+                <div className="contact-copy-note">
+                  <span className="status-dot" aria-hidden="true" />
+                  {t("sections.contact.responseNote")}
+                </div>
               </div>
+
+              <form
+                className="contact-form"
+                onSubmit={handleContactSubmit}
+                onInput={() => setContactSubmitted(false)}
+              >
+                <div className="contact-form-heading">
+                  <p className="contact-form-label">
+                    {t("sections.contact.form.label")}
+                  </p>
+                </div>
+
+                <div className="contact-form-grid">
+                  <label className="contact-field" htmlFor="contact-name">
+                    <span>{t("sections.contact.form.nameLabel")}</span>
+                    <input
+                      id="contact-name"
+                      type="text"
+                      name="name"
+                      placeholder={t("sections.contact.form.namePlaceholder")}
+                      autoComplete="name"
+                      required
+                    />
+                  </label>
+                  <label className="contact-field" htmlFor="contact-email">
+                    <span>{t("sections.contact.form.emailLabel")}</span>
+                    <input
+                      id="contact-email"
+                      type="email"
+                      name="email"
+                      placeholder={t(
+                        "sections.contact.form.emailPlaceholder",
+                      )}
+                      autoComplete="email"
+                      required
+                    />
+                  </label>
+                  <label
+                    className="contact-field contact-field--full"
+                    htmlFor="contact-organization"
+                  >
+                    <span>
+                      {t("sections.contact.form.organizationLabel")}
+                    </span>
+                    <input
+                      id="contact-organization"
+                      type="text"
+                      name="organization"
+                      placeholder={t(
+                        "sections.contact.form.organizationPlaceholder",
+                      )}
+                      autoComplete="organization"
+                    />
+                  </label>
+                  <label
+                    className="contact-field contact-field--full"
+                    htmlFor="contact-message"
+                  >
+                    <span>{t("sections.contact.form.messageLabel")}</span>
+                    <textarea
+                      id="contact-message"
+                      name="message"
+                      rows={5}
+                      placeholder={t(
+                        "sections.contact.form.messagePlaceholder",
+                      )}
+                      required
+                    />
+                  </label>
+                </div>
+
+                <div className="contact-form-footer">
+                  <p className="contact-form-privacy">
+                    {t("sections.contact.form.privacyNote")}
+                  </p>
+                  <button className="contact-submit" type="submit">
+                    {t("sections.contact.form.submit")}
+                    <span className="material-symbols-outlined" aria-hidden="true">
+                      arrow_forward
+                    </span>
+                  </button>
+                </div>
+
+                {contactSubmitted ? (
+                  <p className="contact-success" role="status" aria-live="polite">
+                    {t("sections.contact.form.success")}
+                  </p>
+                ) : null}
+              </form>
             </div>
           </div>
         </section>
