@@ -1,0 +1,89 @@
+{
+  "brand": {
+    "kicker": "Bienestar laboral"
+  },
+  "header": {
+    "home": "Inicio",
+    "about": "Producto",
+    "employeesAndCompanies": "Para empleados y empresas",
+    "plans": "Planes",
+    "contact": "Contacto",
+    "aboutTeam": "Conócenos",
+    "signIn": "Iniciar sesión",
+    "register": "Registrarse",
+    "navigation": "Navegación principal",
+    "languageSwitcher": "Cambiar idioma",
+    "spanish": "Español",
+    "english": "Inglés"
+  },
+  "home": {
+    "title": "Un espacio seguro para estar mejor.",
+    "description": "Acompañamos a las personas y sus equipos con herramientas para el bienestar laboral."
+  },
+  "about": {
+    "eyebrow": "El producto",
+    "title": "Un ecosistema para escuchar, acompañar y actuar.",
+    "lead": "SafeSpace reúne en un solo espacio las herramientas que las personas y los equipos necesitan para cuidar el bienestar laboral.",
+    "body": "Desde el registro diario del estado de ánimo y las encuestas hasta los reportes, el chat de orientación general y la visión de Recursos Humanos, todo está conectado para hacer más clara la conversación sobre el bienestar.",
+    "visualLabel": "Vistas de SafeSpace en computadora y celular",
+    "visualAlt": {
+      "webEmployee": "Vista de inicio de SafeSpace para empleados en computadora",
+      "webHr": "Resumen de bienestar de SafeSpace para Recursos Humanos en computadora",
+      "mobileEmployee": "Vista de inicio de SafeSpace para empleados en celular",
+      "mobileHr": "Resumen de bienestar de SafeSpace para Recursos Humanos en celular"
+    }
+  },
+  "sections": {
+    "comingSoon": "Contenido de esta sección próximamente.",
+    "employeesAndCompanies": {
+      "eyebrow": "Para empleados y empresas",
+      "title": "Una misma plataforma, dos formas de acompañar.",
+      "description": "SafeSpace conecta el bienestar cotidiano de las personas con señales útiles para que las empresas puedan escuchar y actuar.",
+      "employees": {
+        "label": "Para empleados",
+        "title": "Un espacio para sentirte escuchado.",
+        "description": "Herramientas sencillas para reconocer cómo te sientes, pedir apoyo y participar con confianza.",
+        "benefits": {
+          "expression": "Expresa tu estado de ánimo sin juicios.",
+          "guidance": "Encuentra orientación general cuando la necesites.",
+          "privacy": "Comparte reportes de forma segura y, si quieres, anónima."
+        }
+      },
+      "companies": {
+        "label": "Para empresas",
+        "title": "Señales para cuidar mejor a tu equipo.",
+        "description": "Una visión organizada del bienestar para escuchar a las personas y convertir sus necesidades en acciones.",
+        "benefits": {
+          "listen": "Escucha tendencias del equipo con mayor claridad.",
+          "signals": "Recibe señales útiles sin exponer la privacidad individual.",
+          "action": "Prioriza respuestas y acompaña con decisiones informadas."
+        }
+      }
+    },
+    "plans": {
+      "eyebrow": "Planes",
+      "title": "Elige el ritmo que mejor encaje con tu organización.",
+      "description": "Más adelante podrás comparar nuestras modalidades mensual y anual, pensadas para acompañar el crecimiento de cada equipo."
+    },
+    "contact": {
+      "eyebrow": "Contacto",
+      "title": "Hablemos sobre el bienestar de tu equipo.",
+      "description": "Estamos preparando un canal sencillo para resolver tus preguntas y conocer mejor las necesidades de tu organización."
+    },
+    "aboutTeam": {
+      "eyebrow": "Conócenos",
+      "title": "Detrás de SafeSpace hay personas que también escuchan.",
+      "description": "Conoce al equipo que está construyendo un espacio más humano para el bienestar laboral."
+    }
+  },
+  "footer": {
+    "description": "Un espacio digital para acompañar el bienestar de las personas y sus equipos.",
+    "navigation": "Navegación del sitio",
+    "status": "Diseñado para el bienestar",
+    "privacy": "Política de privacidad",
+    "terms": "Términos y condiciones",
+    "aiPolicy": "Política de uso de IA",
+    "support": "Soporte",
+    "copyright": "© 2026 SafeSpace. Todos los derechos reservados."
+  }
+}

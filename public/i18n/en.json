@@ -1,0 +1,89 @@
+{
+  "brand": {
+    "kicker": "Employee wellbeing"
+  },
+  "header": {
+    "home": "Home",
+    "about": "Product",
+    "employeesAndCompanies": "For employees and companies",
+    "plans": "Plans",
+    "contact": "Contact",
+    "aboutTeam": "Meet the Team",
+    "signIn": "Sign in",
+    "register": "Sign up",
+    "navigation": "Main navigation",
+    "languageSwitcher": "Change language",
+    "spanish": "Spanish",
+    "english": "English"
+  },
+  "home": {
+    "title": "A safe space to feel better.",
+    "description": "We support people and their teams with tools for workplace wellbeing."
+  },
+  "about": {
+    "eyebrow": "The product",
+    "title": "One ecosystem to listen, support and act.",
+    "lead": "SafeSpace brings together the tools people and teams need to care for workplace wellbeing in one place.",
+    "body": "From daily mood check-ins and surveys to reports, a general-guidance chat and the HR view, everything connects to make conversations about wellbeing clearer.",
+    "visualLabel": "SafeSpace views on desktop and mobile",
+    "visualAlt": {
+      "webEmployee": "SafeSpace employee home view on desktop",
+      "webHr": "SafeSpace HR wellbeing summary on desktop",
+      "mobileEmployee": "SafeSpace employee home view on mobile",
+      "mobileHr": "SafeSpace HR wellbeing summary on mobile"
+    }
+  },
+  "sections": {
+    "comingSoon": "More content for this section is coming soon.",
+    "employeesAndCompanies": {
+      "eyebrow": "For employees and companies",
+      "title": "One platform, two ways to support people.",
+      "description": "SafeSpace connects everyday wellbeing with useful signals that help companies listen and take action.",
+      "employees": {
+        "label": "For employees",
+        "title": "A space where you feel heard.",
+        "description": "Simple tools to recognize how you feel, ask for support and participate with confidence.",
+        "benefits": {
+          "expression": "Share how you feel without judgment.",
+          "guidance": "Find general guidance when you need it.",
+          "privacy": "Share reports securely and anonymously when you choose."
+        }
+      },
+      "companies": {
+        "label": "For companies",
+        "title": "Signals to care for your team better.",
+        "description": "An organized view of wellbeing that helps you listen to people and turn their needs into action.",
+        "benefits": {
+          "listen": "Understand team trends with greater clarity.",
+          "signals": "Receive useful signals without exposing individual privacy.",
+          "action": "Prioritize responses and act with informed decisions."
+        }
+      }
+    },
+    "plans": {
+      "eyebrow": "Plans",
+      "title": "Choose the pace that fits your organization.",
+      "description": "You will soon be able to compare our monthly and annual options, designed to support every team as it grows."
+    },
+    "contact": {
+      "eyebrow": "Contact",
+      "title": "Let’s talk about your team’s wellbeing.",
+      "description": "We are preparing a simple channel for your questions and to better understand your organization’s needs."
+    },
+    "aboutTeam": {
+      "eyebrow": "Meet the team",
+      "title": "SafeSpace is built by people who listen too.",
+      "description": "Meet the team building a more human space for workplace wellbeing."
+    }
+  },
+  "footer": {
+    "description": "A digital space designed to support the wellbeing of people and their teams.",
+    "navigation": "Site navigation",
+    "status": "Designed for wellbeing",
+    "privacy": "Privacy policy",
+    "terms": "Terms and conditions",
+    "aiPolicy": "AI use policy",
+    "support": "Support",
+    "copyright": "© 2026 SafeSpace. All rights reserved."
+  }
+}
