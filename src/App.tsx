@@ -4,6 +4,7 @@ import {
   type KeyboardEvent,
   type MouseEvent,
   useEffect,
+  useRef,
   useState,
 } from "react";
 import { useTranslation } from "react-i18next";
@@ -33,6 +34,8 @@ function App() {
   const [activeTeamMember, setActiveTeamMember] = useState(0);
   const [isTeamPaused, setIsTeamPaused] = useState(false);
   const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const mobileMenuButtonRef = useRef<HTMLButtonElement>(null);
   const currentLanguage = i18n.resolvedLanguage?.startsWith("en") ? "en" : "es";
   const isEnglish = currentLanguage === "en";
   const [currency, setCurrency] = useState<Currency>("PEN");
@@ -91,6 +94,35 @@ function App() {
   }, []);
 
   useEffect(() => {
+    if (!isMobileMenuOpen) {
+      return undefined;
+    }
+
+    const handleMenuKeyDown = (event: globalThis.KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMobileMenuOpen(false);
+        mobileMenuButtonRef.current?.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleMenuKeyDown);
+
+    return () => document.removeEventListener("keydown", handleMenuKeyDown);
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    const handleViewportChange = () => {
+      if (window.innerWidth > 1024) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleViewportChange);
+
+    return () => window.removeEventListener("resize", handleViewportChange);
+  }, []);
+
+  useEffect(() => {
     const sectionIds = [
       "home",
       "about",
@@ -138,12 +170,18 @@ function App() {
   const handleHomeNavigation = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     setActiveSection("home");
+    setIsMobileMenuOpen(false);
     window.history.replaceState(null, "", "#home");
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: reduceMotion ? "auto" : "smooth",
     });
+  };
+
+  const handleSectionNavigation = (sectionId: string) => {
+    setActiveSection(sectionId);
+    setIsMobileMenuOpen(false);
   };
 
   const visibleAudience = hoveredAudience ?? selectedAudience;
@@ -213,7 +251,13 @@ function App() {
             </span>
           </a>
 
-          <nav className="nav-header" aria-label={t("header.navigation")}>
+          <nav
+            id="primary-navigation"
+            className={
+              isMobileMenuOpen ? "nav-header is-open" : "nav-header"
+            }
+            aria-label={t("header.navigation")}
+          >
             <ul>
               <li>
                 <a
@@ -235,7 +279,7 @@ function App() {
                     activeSection === "about" ? "nav-link active" : "nav-link"
                   }
                   href="#about"
-                  onClick={() => setActiveSection("about")}
+                  onClick={() => handleSectionNavigation("about")}
                   aria-current={
                     activeSection === "about" ? "location" : undefined
                   }
@@ -251,7 +295,9 @@ function App() {
                       : "nav-link"
                   }
                   href="#employees-and-companies"
-                  onClick={() => setActiveSection("employees-and-companies")}
+                  onClick={() =>
+                    handleSectionNavigation("employees-and-companies")
+                  }
                   aria-current={
                     activeSection === "employees-and-companies"
                       ? "location"
@@ -267,7 +313,7 @@ function App() {
                     activeSection === "plans" ? "nav-link active" : "nav-link"
                   }
                   href="#plans"
-                  onClick={() => setActiveSection("plans")}
+                  onClick={() => handleSectionNavigation("plans")}
                   aria-current={
                     activeSection === "plans" ? "location" : undefined
                   }
@@ -281,7 +327,7 @@ function App() {
                     activeSection === "contact" ? "nav-link active" : "nav-link"
                   }
                   href="#contact"
-                  onClick={() => setActiveSection("contact")}
+                  onClick={() => handleSectionNavigation("contact")}
                   aria-current={
                     activeSection === "contact" ? "location" : undefined
                   }
@@ -297,7 +343,7 @@ function App() {
                       : "nav-link"
                   }
                   href="#about-team"
-                  onClick={() => setActiveSection("about-team")}
+                  onClick={() => handleSectionNavigation("about-team")}
                   aria-current={
                     activeSection === "about-team" ? "location" : undefined
                   }
@@ -337,6 +383,23 @@ function App() {
               </button>
             </div>
           </div>
+          <button
+            ref={mobileMenuButtonRef}
+            className="menu-toggle"
+            type="button"
+            aria-controls="primary-navigation"
+            aria-expanded={isMobileMenuOpen}
+            onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
+          >
+            <span className="material-symbols-outlined" aria-hidden="true">
+              {isMobileMenuOpen ? "close" : "menu"}
+            </span>
+            <span className="sr-only">
+              {isMobileMenuOpen
+                ? t("header.closeMenu")
+                : t("header.openMenu")}
+            </span>
+          </button>
         </div>
       </header>
 

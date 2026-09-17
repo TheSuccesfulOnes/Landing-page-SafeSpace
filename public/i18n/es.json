@@ -13,7 +13,9 @@
     "navigation": "Navegación principal",
     "languageSwitcher": "Cambiar idioma",
     "spanish": "Español",
-    "english": "Inglés"
+    "english": "Inglés",
+    "openMenu": "Abrir menú de navegación",
+    "closeMenu": "Cerrar menú de navegación"
   },
   "home": {
     "title": "Un espacio seguro para estar mejor.",

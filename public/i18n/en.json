@@ -13,7 +13,9 @@
     "navigation": "Main navigation",
     "languageSwitcher": "Change language",
     "spanish": "Spanish",
-    "english": "English"
+    "english": "English",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu"
   },
   "home": {
     "title": "A safe space to feel better.",
