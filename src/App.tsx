@@ -17,7 +17,7 @@ const teamMembers = [
   { key: "member02", image: "/media/team/member-02.png" },
   { key: "member03", image: "/media/team/member-03.png" },
   { key: "member04", image: "/media/team/member-04.png" },
-  { key: "member05", image: "/media/team/member-05.png" },
+  { key: "member05", image: "/media/team/member-05.jpeg" },
 ] as const;
 
 function App() {
