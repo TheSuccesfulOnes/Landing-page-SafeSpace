@@ -999,9 +999,27 @@ function App() {
             className="footer-navigation"
             aria-label={t("footer.navigation")}
           >
-            <a href="#privacy">{t("footer.privacy")}</a>
-            <a href="#terms">{t("footer.terms")}</a>
-            <a href="#ai-policy">{t("footer.aiPolicy")}</a>
+            <a
+              href="/documents/safespace-politica-de-privacidad.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t("footer.privacy")}
+            </a>
+            <a
+              href="/documents/safespace-terminos-y-condiciones.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t("footer.terms")}
+            </a>
+            <a
+              href="/documents/safespace-politica-de-uso-de-ia.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t("footer.aiPolicy")}
+            </a>
             <a href="#support">{t("footer.support")}</a>
           </nav>
 
