@@ -309,11 +309,8 @@ function App() {
           </nav>
 
           <div className="header-tools">
-            <a className="header-login" href="#login">
+            <a className="header-login" href="https://safespace-web-nine.vercel.app/">
               {t("header.signIn")}
-            </a>
-            <a className="header-register" href="#register">
-              {t("header.register")}
             </a>
             <div
               className="language-control"
