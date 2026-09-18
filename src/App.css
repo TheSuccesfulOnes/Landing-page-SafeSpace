@@ -364,7 +364,7 @@ input:focus-visible {
   position: relative;
   display: grid;
   place-items: center;
-  min-height: calc(100svh - var(--header-height));
+  min-height: calc(100svh);
   overflow: hidden;
   isolation: isolate;
   background: var(--dark);
