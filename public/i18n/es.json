@@ -167,6 +167,12 @@
           "role": "Backend, Full Stack e inteligencia artificial",
           "description": "Estudiante de Ingeniería de Software en la UPC, orientado al desarrollo Backend, Full Stack y la inteligencia artificial aplicada. Tiene experiencia con Angular, Vue, Spring Boot, .NET, MySQL y Git, además de conocimientos en arquitectura de software y desarrollo de aplicaciones web.",
           "alt": "Retrato profesional de José Gustavo Asto Jácome"
+        },
+        "member06": {
+          "name": "Jean Niels Arizabal Condori",
+          "role": "Ingeniería de Software y soluciones tecnológicas",
+          "description": "Estudiante de Ingeniería de Software en la UPC, interesado en seguir desarrollando sus habilidades en programación, trabajo en equipo y creación de soluciones tecnológicas. Aporta de manera responsable al desarrollo de SafeSpace y mantiene una actitud de aprendizaje constante durante cada etapa del proyecto.",
+          "alt": "Retrato profesional de Jean Niels Arizabal Condori"
         }
       }
     },
